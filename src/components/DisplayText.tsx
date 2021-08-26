@@ -20,6 +20,12 @@ export default function DisplayText(props: DisplayProps) {
           onMouseLeave={() => {
             if (props.setHovered) props.setHovered(undefined);
           }}
+          onTouchStart={() => {
+            if (props.setHovered) props.setHovered(props.index);
+          }}
+          onTouchEnd={() => {
+            if (props.setHovered) props.setHovered(undefined);
+          }}
         >
           {props.text}
           <div className="text-section-line" />

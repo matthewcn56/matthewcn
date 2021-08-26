@@ -24,7 +24,13 @@ export default function Hoverable(props: HoverableProps) {
       onMouseEnter={() => {
         if (props.setHovered) props.setHovered(props.index);
       }}
+      onTouchStart={() => {
+        if (props.setHovered) props.setHovered(props.index);
+      }}
       onMouseLeave={() => {
+        if (props.setHovered) props.setHovered(undefined);
+      }}
+      onTouchEnd={() => {
         if (props.setHovered) props.setHovered(undefined);
       }}
     >
