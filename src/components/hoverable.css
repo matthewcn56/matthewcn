@@ -1,7 +1,7 @@
 .icon-img {
   height: 3vw;
-  min-height: 30px;
-  border-radius: 3vw;
+  min-height: 40px;
+  border-radius: 4vw;
   background-color: #841414;
   color: white;
 }
@@ -9,13 +9,15 @@
 .hoverable-container {
   display: flex;
   flex-direction: row;
-  min-height: 30px;
+  min-height: 40px;
+  height: fit-content;
   width: fit-content;
   align-items: center;
   background-color: #a31e1e;
-  padding-right: 5px;
   border-radius: 4vw;
   color: white;
+  transition: width 2s;
+  transition-property: all;
 }
 
 .hoverable-text {
