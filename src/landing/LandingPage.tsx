@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import mattchoo from "../assets/mattchoo.jpg";
 import "./landingPage.css";
 import mattchooContent from "./LandingPageContent";
@@ -28,7 +28,11 @@ export default function LandingPage() {
       <div className="hoverables-display">{icons}</div>
 
       <div>
-        <img src={mattchoo} className="circular center-pic" />
+        <img
+          src={mattchoo}
+          className="circular center-pic"
+          alt="matthew-nieva"
+        />
       </div>
       <div>Matthew Nieva</div>
       <div className="text-section">{displayText}</div>
