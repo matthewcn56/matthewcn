@@ -143,6 +143,7 @@ const sectionContent: SectionLayout[] = [
   {
     title: "Fun Hobbies",
     clickableText: true,
+    constantPic: mattchoo,
     content: [
       {
         plain: "Here's some of my projects!",

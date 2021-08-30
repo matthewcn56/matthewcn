@@ -11,8 +11,8 @@ export default function LandingPage() {
   const [displayAll, setDisplayAll] = useState(false);
 
   useEffect(() => {
-    console.log("Hovered is: " + hovered);
-  }, [hovered]);
+    setHovered(undefined);
+  }, [selected]);
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
       //console.log("Section is: " + Object.entries(section));
@@ -35,6 +35,8 @@ export default function LandingPage() {
     },
     []
   );
+
+  const sections = mattchooContent;
 
   const header = mattchooContent[selected].title;
 
@@ -60,7 +62,7 @@ export default function LandingPage() {
   return (
     <div className="landing-body">
       <h2>{header}</h2>
-      <div id="hoverables-display">{icons}</div>
+      <div className="hoverables-display">{icons}</div>
 
       <img
         src={
