@@ -67,8 +67,8 @@ export default function LandingPage() {
       <img
         src={
           mattchooContent[selected].constantPic
-            ? mattchoo
-            : hovered
+            ? mattchooContent[selected].constantPic
+            : hovered || hovered === 0
             ? mattchooContent[selected].hoverables[hovered].hoverable?.icon
             : undefined
         }
