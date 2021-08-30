@@ -9,6 +9,7 @@
   flex-wrap: wrap;
   justify-content: center;
   animation: rotate-container 50s linear infinite;
+  margin: 20px auto;
 }
 
 #hoverables-display > div {

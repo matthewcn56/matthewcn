@@ -6,25 +6,36 @@ interface DisplayProps {
   setHovered?: React.Dispatch<React.SetStateAction<number | undefined>>;
   currSelected?: boolean;
   link?: any;
+  displayLink?: boolean;
 }
 
 export default function DisplayText(props: DisplayProps) {
   return props.index !== undefined ? (
     <div>
-      <a href={props.link} rel="noreferrer noopener" target="_blank">
+      <a
+        href={props.displayLink ? props.link : undefined}
+        rel="noreferrer noopener"
+        target="_blank"
+      >
         <div
           className={`text-container ${props.currSelected ? "active" : ""}`}
           onMouseEnter={() => {
             if (props.setHovered) props.setHovered(props.index);
           }}
           onMouseLeave={() => {
-            if (props.setHovered) props.setHovered(undefined);
+            if (props.setHovered && props.displayLink)
+              props.setHovered(undefined);
           }}
           onTouchStart={() => {
             if (props.setHovered) props.setHovered(props.index);
           }}
           onTouchEnd={() => {
-            if (props.setHovered) props.setHovered(undefined);
+            if (props.setHovered && props.displayLink)
+              props.setHovered(undefined);
+          }}
+          onTouchCancel={() => {
+            if (props.setHovered && props.displayLink)
+              props.setHovered(undefined);
           }}
         >
           {props.text}

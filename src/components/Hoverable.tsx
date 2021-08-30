@@ -33,6 +33,9 @@ export default function Hoverable(props: HoverableProps) {
       onTouchEnd={() => {
         if (props.setHovered) props.setHovered(undefined);
       }}
+      onTouchCancel={() => {
+        if (props.setHovered) props.setHovered(undefined);
+      }}
     >
       <div className="hoverable-container">
         <div>

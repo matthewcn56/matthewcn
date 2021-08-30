@@ -38,6 +38,8 @@ export default function LandingPage() {
 
   const header = mattchooContent[selected].title;
 
+  const isLinkClickable = mattchooContent[selected].clickableText;
+  //console.log(mattchooContent[selected]);
   const displayText: JSX.Element[] = mattchooContent[selected].content.map(
     (section, index) =>
       section.plain ? (
@@ -47,18 +49,30 @@ export default function LandingPage() {
           text={section.hoverable?.name}
           index={section.hoverableIndex}
           link={section.hoverable?.link}
+          displayLink={isLinkClickable}
           currSelected={hovered === section.hoverableIndex}
           setHovered={setHovered}
           key={index}
         />
       )
   );
+
   return (
     <div className="landing-body">
       <h2>{header}</h2>
       <div id="hoverables-display">{icons}</div>
 
-      <img src={mattchoo} className="circular center-pic" alt="matthew-nieva" />
+      <img
+        src={
+          mattchooContent[selected].constantPic
+            ? mattchoo
+            : hovered
+            ? mattchooContent[selected].hoverables[hovered].hoverable?.icon
+            : undefined
+        }
+        className="circular center-pic"
+        alt="matthew-nieva"
+      />
       <div id="name">Matthew Nieva</div>
       <div className="text-section">{displayText}</div>
 

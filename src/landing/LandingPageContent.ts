@@ -1,4 +1,6 @@
 import defaultIcon from "../assets/logo512.png";
+import mattchoo from "../assets/mattchoo.jpg";
+import beheard from "../assets/be_heard.png";
 //import Resume from "../assets/MatthewNieva_Resume.pdf";
 interface TextLayout {
   plain?: string;
@@ -19,17 +21,24 @@ interface HoverableLayout {
 interface SectionLayout {
   title: string;
   content: TextLayout[];
+  constantPic?: string;
+  clickableText: boolean;
 }
 
 interface IndexedSectionLayout {
   title: string;
   content: IconsTextLayout[];
+  constantPic?: string;
+  clickableText: boolean;
+  hoverables: IconsTextLayout[];
 }
 
 const sectionContent: SectionLayout[] = [
-  //first one is default
+  //first one is contact me
   {
     title: "Contact Me",
+    constantPic: mattchoo,
+    clickableText: true,
     content: [
       {
         plain:
@@ -86,23 +95,54 @@ const sectionContent: SectionLayout[] = [
   },
   //second one is projects
   {
-    title: "Cool Projects",
+    title: "Experience & Projects",
+    clickableText: false,
     content: [
       {
-        plain: "Here's some of my projects!",
+        hoverable: {
+          icon: defaultIcon,
+          iconAltText: "Miravel",
+          link: "https://miravel.com",
+          name: "IoT Wall Garden",
+        },
       },
       {
         hoverable: {
           icon: defaultIcon,
-          iconAltText: "LinkedIn",
-          link: "https://www.linkedin.com/in/matthew-nieva/",
-          name: "LinkedIn",
+          iconAltText: "Bias By Us",
+          link: "https://bias-by-us.netlify.app",
+          name: "Bias By Us",
+        },
+      },
+      {
+        hoverable: {
+          icon: defaultIcon,
+          iconAltText: "TasteBuds",
+          link: "https://devpost.com/software/tastebuds",
+          name: "TasteBuds",
+        },
+      },
+      {
+        hoverable: {
+          icon: beheard,
+          iconAltText: "BeHeard",
+          link: "https://devpost.com/software/be-heard",
+          name: "BeHeard",
+        },
+      },
+      {
+        hoverable: {
+          icon: defaultIcon,
+          iconAltText: "EyeWalk",
+          link: "https://github.com/matthewcn56/EyeWalk",
+          name: "EyeWalk",
         },
       },
     ],
   },
   {
     title: "Fun Hobbies",
+    clickableText: true,
     content: [
       {
         plain: "Here's some of my projects!",
@@ -123,6 +163,7 @@ const indexedContent: IndexedSectionLayout[] = sectionContent.map((section) => {
   let hovIndex = 0;
   const indexedLayout: IconsTextLayout[] = section.content.map((sect) => {
     if (sect.hoverable) {
+      console.log(hovIndex);
       const laidOut = {
         ...sect,
         hoverableIndex: hovIndex,
@@ -135,9 +176,15 @@ const indexedContent: IndexedSectionLayout[] = sectionContent.map((section) => {
       };
     }
   });
+  const hoverables = indexedLayout.reduce((listed: IconsTextLayout[], curr) => {
+    if (curr.hoverableIndex || curr.hoverableIndex === 0) listed.push(curr);
+    return listed;
+  }, []);
+  console.log("hoverables is: " + Object.entries(hoverables));
   return {
-    title: section.title,
+    ...section,
     content: indexedLayout,
+    hoverables: hoverables,
   };
 });
 

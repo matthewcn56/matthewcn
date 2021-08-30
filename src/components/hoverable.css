@@ -1,5 +1,6 @@
 .icon-img {
   height: 3vw;
+  width: auto;
   min-height: 40px;
   border-radius: 4vw;
   background-color: #841414;
