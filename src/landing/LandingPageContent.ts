@@ -81,7 +81,7 @@ const sectionContent: SectionLayout[] = [
         },
       },
       {
-        plain: ",",
+        plain: ", or",
       },
       {
         hoverable: {
@@ -95,7 +95,7 @@ const sectionContent: SectionLayout[] = [
   },
   //second one is projects
   {
-    title: "Experience & Projects",
+    title: "Experience/Projects",
     clickableText: false,
     content: [
       {

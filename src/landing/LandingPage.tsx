@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import mattchoo from "../assets/mattchoo.jpg";
+//import mattchoo from "../assets/mattchoo.jpg";
 import "./landingPage.css";
 import mattchooContent from "./LandingPageContent";
 import Hoverable from "../components/Hoverable";
@@ -12,6 +12,7 @@ export default function LandingPage() {
 
   useEffect(() => {
     setHovered(undefined);
+    setDisplayAll(false);
   }, [selected]);
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
@@ -36,7 +37,8 @@ export default function LandingPage() {
     []
   );
 
-  const sections = mattchooContent;
+  const sectionTitles = mattchooContent.map((sect) => sect.title);
+  console.log(sectionTitles);
 
   const header = mattchooContent[selected].title;
 
