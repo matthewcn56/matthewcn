@@ -17,10 +17,19 @@
   background-color: #a31e1e;
   border-radius: 4vw;
   color: white;
-  transition: width 2s;
+  transition: width 1s;
   transition-property: all;
+}
+
+.background {
+  background-color: transparent;
 }
 
 .hoverable-text {
   padding: 5px;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import mattchoo from "../assets/mattchoo.jpg";
+import mattchoo from "../assets/mattchoo.jpg";
 import "./landingPage.css";
 import mattchooContent from "./LandingPageContent";
 import Hoverable from "../components/Hoverable";
@@ -64,7 +64,13 @@ export default function LandingPage() {
   return (
     <div className="landing-body">
       <h2>{header}</h2>
-      <div className="hoverables-display">{icons}</div>
+      <div
+        className={`hoverables-display ${
+          hovered !== undefined ? "paused" : ""
+        }`}
+      >
+        {icons}
+      </div>
 
       <img
         src={
@@ -72,7 +78,7 @@ export default function LandingPage() {
             ? mattchooContent[selected].constantPic
             : hovered || hovered === 0
             ? mattchooContent[selected].hoverables[hovered].hoverable?.icon
-            : undefined
+            : mattchoo
         }
         className="circular center-pic"
         alt="matthew-nieva"

@@ -1,19 +1,35 @@
 .center-pic {
   height: 20vh;
   min-height: 250px;
+  position: relative;
+  /* position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%); */
+  z-index: 0;
 }
 
 .hoverables-display {
   display: flex;
   flex-direction: row;
+  top: 30%;
+  left: 50%;
   flex-wrap: wrap;
   justify-content: center;
   animation: rotate-container 50s linear infinite;
-  margin: 20px auto;
+  z-index: 1;
+}
+
+.paused {
+  animation-play-state: paused;
 }
 
 .hoverables-display > div {
   animation: inner-rotate 50s linear infinite;
+}
+
+.paused > div {
+  animation-play-state: paused;
 }
 
 @keyframes rotate-container {

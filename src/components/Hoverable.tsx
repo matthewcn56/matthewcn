@@ -17,38 +17,42 @@ interface HoverableLayout {
 
 export default function Hoverable(props: HoverableProps) {
   return (
-    <a
-      href={props.hoverable.link}
-      rel="noreferrer noopener"
-      target="_blank"
-      onMouseEnter={() => {
-        if (props.setHovered) props.setHovered(props.index);
-      }}
-      onTouchStart={() => {
-        if (props.setHovered) props.setHovered(props.index);
-      }}
-      onMouseLeave={() => {
-        if (props.setHovered) props.setHovered(undefined);
-      }}
-      onTouchEnd={() => {
-        if (props.setHovered) props.setHovered(undefined);
-      }}
-      onTouchCancel={() => {
-        if (props.setHovered) props.setHovered(undefined);
-      }}
+    <div
+      className={`hoverable-container ${
+        !props.shouldDisplay ? "background" : ""
+      }`}
     >
-      <div className="hoverable-container">
-        <div>
+      <div>
+        <a
+          href={props.hoverable.link}
+          rel="noreferrer noopener"
+          target="_blank"
+          onMouseEnter={() => {
+            if (props.setHovered) props.setHovered(props.index);
+          }}
+          onTouchStart={() => {
+            if (props.setHovered) props.setHovered(props.index);
+          }}
+          onMouseLeave={() => {
+            if (props.setHovered) props.setHovered(undefined);
+          }}
+          onTouchEnd={() => {
+            if (props.setHovered) props.setHovered(undefined);
+          }}
+          onTouchCancel={() => {
+            if (props.setHovered) props.setHovered(undefined);
+          }}
+        >
           <img
             src={props.hoverable.icon}
             alt={props.hoverable.iconAltText}
             className="icon-img"
           />
-        </div>
-        {props.shouldDisplay && (
-          <div className="hoverable-text">{props.hoverable.name}</div>
-        )}
+        </a>
       </div>
-    </a>
+      <div className={`hoverable-text ${!props.shouldDisplay ? "hidden" : ""}`}>
+        {props.hoverable.name}
+      </div>
+    </div>
   );
 }
