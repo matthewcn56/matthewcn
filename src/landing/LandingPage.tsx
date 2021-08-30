@@ -14,6 +14,16 @@ export default function LandingPage() {
     setHovered(undefined);
     setDisplayAll(false);
   }, [selected]);
+  const iconsLength = mattchooContent[selected].content.reduce(
+    (num: number, curr) => {
+      if (curr.hoverable) num++;
+      return num;
+    },
+    0
+  );
+  console.log("IconsLength is: " + iconsLength);
+  const angleOffset = (Math.PI * 2) / iconsLength;
+  let angle = 0;
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
       //console.log("Section is: " + Object.entries(section));
@@ -21,8 +31,18 @@ export default function LandingPage() {
         const sectDisplay = displayAll
           ? true
           : hovered === section.hoverableIndex;
+        //do math shenanigans
+        const xOffset = 150 * Math.cos(angle);
+        const yOffset = 150 * Math.sin(angle);
+        angle += angleOffset;
         icons.push(
-          <div>
+          <div
+            style={{
+              position: "absolute",
+              left: xOffset,
+              top: yOffset,
+            }}
+          >
             <Hoverable
               hoverable={section.hoverable}
               shouldDisplay={sectDisplay}
@@ -65,25 +85,27 @@ export default function LandingPage() {
     <div className="landing-body">
       <nav>{sectionTitles}</nav>
       <h2>{header}</h2>
-      <div
-        className={`hoverables-display ${
-          hovered !== undefined ? "paused" : ""
-        }`}
-      >
-        {icons}
+      <div id="center-grid">
+        <div
+          className={`hoverables-display ${
+            hovered !== undefined ? "paused" : ""
+          }`}
+        >
+          <div style={{ position: "relative" }}>{icons}</div>
+        </div>
+        <img
+          src={
+            mattchooContent[selected].constantPic
+              ? mattchooContent[selected].constantPic
+              : hovered || hovered === 0
+              ? mattchooContent[selected].hoverables[hovered].hoverable?.icon
+              : mattchoo
+          }
+          className="circular center-pic"
+          alt="matthew-nieva"
+        />
       </div>
 
-      <img
-        src={
-          mattchooContent[selected].constantPic
-            ? mattchooContent[selected].constantPic
-            : hovered || hovered === 0
-            ? mattchooContent[selected].hoverables[hovered].hoverable?.icon
-            : mattchoo
-        }
-        className="circular center-pic"
-        alt="matthew-nieva"
-      />
       <div id="name">Matthew Nieva</div>
       <div>
         Display All
