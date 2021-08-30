@@ -63,6 +63,7 @@ export default function LandingPage() {
 
   return (
     <div className="landing-body">
+      <nav>{sectionTitles}</nav>
       <h2>{header}</h2>
       <div
         className={`hoverables-display ${
@@ -84,6 +85,15 @@ export default function LandingPage() {
         alt="matthew-nieva"
       />
       <div id="name">Matthew Nieva</div>
+      <div>
+        Display All
+        <input
+          type="checkbox"
+          value="DisplayLinks"
+          checked={displayAll}
+          onChange={() => setDisplayAll((prevVal) => !prevVal)}
+        />
+      </div>
       <div className="text-section">{displayText}</div>
 
       <div className="selected-slider-container">
@@ -99,15 +109,6 @@ export default function LandingPage() {
           }}
           onMouseEnter={() => console.log("Mouse entered slider!")}
           onMouseLeave={() => console.log("Bye bye mouse")}
-        />
-      </div>
-      <div>
-        Display All Links
-        <input
-          type="checkbox"
-          value="DisplayLinks"
-          checked={displayAll}
-          onChange={() => setDisplayAll((prevVal) => !prevVal)}
         />
       </div>
     </div>

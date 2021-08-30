@@ -81,7 +81,7 @@ const sectionContent: SectionLayout[] = [
         },
       },
       {
-        plain: ", or",
+        plain: ", or ",
       },
       {
         hoverable: {
@@ -90,6 +90,9 @@ const sectionContent: SectionLayout[] = [
           link: "mailto:matthewcn56@gmail.com",
           name: "Email",
         },
+      },
+      {
+        plain: ".",
       },
     ],
   },
@@ -128,14 +131,6 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "BeHeard",
           link: "https://devpost.com/software/be-heard",
           name: "BeHeard",
-        },
-      },
-      {
-        hoverable: {
-          icon: defaultIcon,
-          iconAltText: "EyeWalk",
-          link: "https://github.com/matthewcn56/EyeWalk",
-          name: "EyeWalk",
         },
       },
     ],

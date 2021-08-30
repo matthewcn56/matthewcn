@@ -16,6 +16,7 @@ export default function DisplayText(props: DisplayProps) {
         href={props.displayLink ? props.link : undefined}
         rel="noreferrer noopener"
         target="_blank"
+        style={{ cursor: "pointer" }}
       >
         <div
           className={`text-container ${props.currSelected ? "active" : ""}`}
