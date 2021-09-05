@@ -51,8 +51,9 @@
   animation-play-state: paused;
 }
 
-.hoverables-display > div > div {
+.hoverables-holder > div {
   animation: inner-rotate 50s linear infinite;
+  transform-origin: 26% 50%;
 }
 
 .paused > div > div {
@@ -127,5 +128,5 @@
   width: 250px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  margin: 20px;
+  margin: 50px;
 }

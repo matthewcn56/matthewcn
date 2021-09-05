@@ -133,14 +133,6 @@ const sectionContent: SectionLayout[] = [
           name: "BeHeard",
         },
       },
-      {
-        hoverable: {
-          icon: defaultIcon,
-          iconAltText: "EyeWalk",
-          link: "https://github.com/matthewcn56/EyeWalk",
-          name: "EyeWalk",
-        },
-      },
     ],
   },
   {

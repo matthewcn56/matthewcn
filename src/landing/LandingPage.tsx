@@ -96,7 +96,7 @@ export default function LandingPage() {
       <h2>{header}</h2>
       <div id="center-grid">
         <div
-          className={`hoverables-display circular ${
+          className={`hoverables-display ${
             hovered !== undefined ? "paused" : ""
           }`}
         >
