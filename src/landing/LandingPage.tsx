@@ -24,6 +24,10 @@ export default function LandingPage() {
   console.log("IconsLength is: " + iconsLength);
   const angleOffset = (Math.PI * 2) / iconsLength;
   let angle = 0;
+  const width = 250;
+  const height = 250;
+  const radius = 150;
+  const hovSize = 40;
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
       //console.log("Section is: " + Object.entries(section));
@@ -32,8 +36,13 @@ export default function LandingPage() {
           ? true
           : hovered === section.hoverableIndex;
         //do math shenanigans
-        const xOffset = 150 * Math.cos(angle);
-        const yOffset = 150 * Math.sin(angle);
+        // const xOffset = 150 * Math.cos(angle);
+        const xOffset = Math.round(
+          width / 2 + radius * Math.cos(angle) - hovSize / 2
+        );
+        const yOffset = Math.round(
+          height / 2 + radius * Math.sin(angle) - hovSize / 2
+        );
         angle += angleOffset;
         icons.push(
           <div
@@ -87,11 +96,11 @@ export default function LandingPage() {
       <h2>{header}</h2>
       <div id="center-grid">
         <div
-          className={`hoverables-display ${
+          className={`hoverables-display circular ${
             hovered !== undefined ? "paused" : ""
           }`}
         >
-          <div style={{ position: "relative" }}>{icons}</div>
+          <div className="hoverables-holder">{icons}</div>
         </div>
         <img
           src={

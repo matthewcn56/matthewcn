@@ -1,8 +1,10 @@
 .center-pic {
-  height: 20vh;
+  /* height: 20vh;
   min-height: 250px;
   width: 20vh;
-  min-width: 250px;
+  min-width: 250px; */
+  height: 250px;
+  width: 250px;
   grid-area: 2 / 2 / 2 /2;
   justify-self: center;
   position: relative;
@@ -16,19 +18,28 @@
 .hoverables-display {
   grid-area: 2 / 2 / 2 /2;
   /* position: relative; */
-  height: 20vh;
+  /* height: 20vh;
   min-height: 250px;
   width: 20vh;
-  min-width: 250px;
+  min-width: 250px; */
+  height: 250px;
+  width: 250px;
   /* justify-self: center; */
   display: flex;
   flex-direction: row;
-  top: 30%;
-  left: 50%;
+  /* top: 30%;
+  left: 50%; */
   flex-wrap: wrap;
   justify-content: center;
   animation: rotate-container 50s linear infinite;
+  transform-origin: 50% 50%;
   z-index: 1;
+}
+
+.hoverables-holder {
+  position: relative;
+  /* transform: translateX(40);
+  transform: translateY(-40); */
 }
 
 .hoverables-display > div {
@@ -108,10 +119,12 @@
 
 #center-grid {
   display: grid;
-  height: 20vh;
+  /* height: 20vh;
   min-height: 250px;
   width: 20vh;
-  min-width: 250px;
+  min-width: 250px; */
+  height: 250px;
+  width: 250px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin: 20px;
