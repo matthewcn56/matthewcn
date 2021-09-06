@@ -1,3 +1,7 @@
+:root {
+  --speed: 500ms;
+}
+
 .app {
   text-align: center;
   height: 100vh;

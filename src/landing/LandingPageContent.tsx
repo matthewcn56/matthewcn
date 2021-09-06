@@ -1,6 +1,11 @@
+import React from "react";
 import defaultIcon from "../assets/logo512.png";
 import mattchoo from "../assets/mattchoo.jpg";
 import beheard from "../assets/be_heard.png";
+import EmailSVG from "../assets/EmailSVG";
+import LinkedInSVG from "../assets/LinkedInSVG";
+import ResumeSVG from "../assets/ResumeSVG";
+import GithubSVG from "../assets/GithubSVG";
 //import Resume from "../assets/MatthewNieva_Resume.pdf";
 interface TextLayout {
   plain?: string;
@@ -49,9 +54,9 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: <ResumeSVG color="#FFFFFF" uniqueClass="resume1" />,
           iconAltText: "Resume",
-          link: "https://github.com/matthewcn56",
+          link: "https://github.com/matthewcn56/matthewcn/blob/main/src/assets/MatthewNieva_Resume.pdf",
           name: "Resume",
         },
       },
@@ -63,7 +68,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: <GithubSVG color="#FFFFFF" uniqueClass="github1" />,
           iconAltText: "Github",
           link: "https://github.com/matthewcn56",
           name: "Github",
@@ -74,7 +79,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: <LinkedInSVG color="#FFFFFF" uniqueClass="linkedin1" />,
           iconAltText: "LinkedIn",
           link: "https://www.linkedin.com/in/matthew-nieva/",
           name: "LinkedIn",
@@ -85,7 +90,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: <EmailSVG color="#FFFFFF" uniqueClass="email2" />,
           iconAltText: "Email",
           link: "mailto:matthewcn56@gmail.com",
           name: "Email",
