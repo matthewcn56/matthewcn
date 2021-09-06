@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 3vw;
-  width: 3vw;
-  min-height: 40px;
-  min-width: 40px;
+  /* height: 3vw;
+  width: 3vw; */
+  /* min-height: 40px;
+  min-width: 40px; */
+  height: 45px;
+  width: 45px;
   border-radius: 4vw;
   background-color: #841414;
   color: white;
@@ -18,6 +20,7 @@
   min-height: 40px;
   height: fit-content;
   width: fit-content;
+  max-width: 125px;
   align-items: center;
   background-color: #a31e1e;
   border-radius: 4vw;

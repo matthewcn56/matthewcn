@@ -109,7 +109,7 @@ const sectionContent: SectionLayout[] = [
       {
         hoverable: {
           icon: defaultIcon,
-          iconAltText: "Miravel",
+          iconAltText: "IoT Wall Garden",
           link: "https://miravel.com",
           name: "IoT Wall Garden",
         },
@@ -128,6 +128,22 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "TasteBuds",
           link: "https://devpost.com/software/tastebuds",
           name: "TasteBuds",
+        },
+      },
+      {
+        hoverable: {
+          icon: defaultIcon,
+          iconAltText: "PracticePlayback",
+          link: "https://devpost.com/software/tastebuds",
+          name: "Practice Playback",
+        },
+      },
+      {
+        hoverable: {
+          icon: defaultIcon,
+          iconAltText: "EyeWalk",
+          link: "https://devpost.com/software/tastebuds",
+          name: "EyeWalk",
         },
       },
       {
