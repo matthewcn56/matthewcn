@@ -6,8 +6,8 @@
   width: 3vw; */
   /* min-height: 40px;
   min-width: 40px; */
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
   border-radius: 4vw;
   background-color: #841414;
   color: white;
@@ -17,10 +17,10 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  min-height: 40px;
+  min-height: 55px;
   height: fit-content;
   width: fit-content;
-  max-width: 125px;
+  max-width: 140px;
   align-items: center;
   background-color: #a31e1e;
   border-radius: 4vw;

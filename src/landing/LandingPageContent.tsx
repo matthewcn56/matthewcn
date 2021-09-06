@@ -1,12 +1,16 @@
 import React from "react";
 import defaultIcon from "../assets/logo512.png";
 import mattchoo from "../assets/mattchoo.jpg";
-import beheard from "../assets/be_heard.png";
+import beheard from "../assets/beheard.svg";
 import EmailSVG from "../assets/EmailSVG";
 import LinkedInSVG from "../assets/LinkedInSVG";
 import ResumeSVG from "../assets/ResumeSVG";
 import GithubSVG from "../assets/GithubSVG";
-//import Resume from "../assets/MatthewNieva_Resume.pdf";
+import MiravelSVG from "../assets/MiravelSVG";
+import miravelLight from "../assets/lightMode/miravelLight.svg";
+import tastebuds from "../assets/tastebuds.svg";
+import teachla from "../assets/teachla.svg";
+import eyewalk from "../assets/eyewalk.svg";
 interface TextLayout {
   plain?: string;
   hoverable?: HoverableLayout;
@@ -21,6 +25,7 @@ interface HoverableLayout {
   name: string;
   link: string;
   iconAltText: string;
+  displaySVG?: any;
 }
 
 interface SectionLayout {
@@ -41,7 +46,7 @@ interface IndexedSectionLayout {
 const sectionContent: SectionLayout[] = [
   //first one is contact me
   {
-    title: "Contact Me",
+    title: "Contact",
     constantPic: mattchoo,
     clickableText: true,
     content: [
@@ -54,7 +59,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <ResumeSVG color="#FFFFFF" uniqueClass="resume1" />,
+          icon: <ResumeSVG color="#FFFFFF" />,
           iconAltText: "Resume",
           link: "https://github.com/matthewcn56/matthewcn/blob/main/src/assets/MatthewNieva_Resume.pdf",
           name: "Resume",
@@ -68,7 +73,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <GithubSVG color="#FFFFFF" uniqueClass="github1" />,
+          icon: <GithubSVG color="#FFFFFF" />,
           iconAltText: "Github",
           link: "https://github.com/matthewcn56",
           name: "Github",
@@ -79,7 +84,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <LinkedInSVG color="#FFFFFF" uniqueClass="linkedin1" />,
+          icon: <LinkedInSVG color="#FFFFFF" />,
           iconAltText: "LinkedIn",
           link: "https://www.linkedin.com/in/matthew-nieva/",
           name: "LinkedIn",
@@ -90,7 +95,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <EmailSVG color="#FFFFFF" uniqueClass="email2" />,
+          icon: <EmailSVG color="#FFFFFF" />,
           iconAltText: "Email",
           link: "mailto:matthewcn56@gmail.com",
           name: "Email",
@@ -103,20 +108,21 @@ const sectionContent: SectionLayout[] = [
   },
   //second one is projects
   {
-    title: "Experience/Projects",
+    title: "Experience",
     clickableText: false,
     content: [
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: <MiravelSVG color="#FFFFFF" />,
           iconAltText: "IoT Wall Garden",
           link: "https://miravel.com",
           name: "IoT Wall Garden",
+          displaySVG: miravelLight,
         },
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: teachla,
           iconAltText: "Bias By Us",
           link: "https://bias-by-us.netlify.app",
           name: "Bias By Us",
@@ -124,7 +130,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: tastebuds,
           iconAltText: "TasteBuds",
           link: "https://devpost.com/software/tastebuds",
           name: "TasteBuds",
@@ -140,7 +146,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: defaultIcon,
+          icon: eyewalk,
           iconAltText: "EyeWalk",
           link: "https://devpost.com/software/tastebuds",
           name: "EyeWalk",
@@ -157,7 +163,7 @@ const sectionContent: SectionLayout[] = [
     ],
   },
   {
-    title: "Fun Hobbies",
+    title: "Hobbies",
     clickableText: true,
     constantPic: mattchoo,
     content: [

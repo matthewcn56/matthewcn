@@ -4,7 +4,7 @@ import "./landingPage.css";
 import mattchooContent from "./LandingPageContent";
 import Hoverable from "../components/Hoverable";
 import DisplayText from "../components/DisplayText";
-const CONTENT_SIZE = mattchooContent.length;
+import Navbar from "../components/Navbar";
 export default function LandingPage() {
   const [selected, setSelected] = useState(0);
   const [hovered, setHovered] = useState<undefined | number>(undefined);
@@ -27,7 +27,7 @@ export default function LandingPage() {
   const width = 250;
   const height = 250;
   const radius = 150;
-  const hovSize = 40;
+  const hovSize = 50;
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
       //console.log("Section is: " + Object.entries(section));
@@ -69,8 +69,6 @@ export default function LandingPage() {
   const sectionTitles = mattchooContent.map((sect) => sect.title);
   console.log(sectionTitles);
 
-  const header = mattchooContent[selected].title;
-
   const isLinkClickable = mattchooContent[selected].clickableText;
   //console.log(mattchooContent[selected]);
   const displayText: JSX.Element[] = mattchooContent[selected].content.map(
@@ -91,57 +89,72 @@ export default function LandingPage() {
   );
 
   return (
-    <div className="landing-body">
-      <nav>{sectionTitles}</nav>
-      <h2>{header}</h2>
-      <div id="center-grid">
-        <div
-          className={`hoverables-display ${
-            hovered !== undefined ? "paused" : ""
-          }`}
-        >
-          <div className="hoverables-holder">{icons}</div>
+    <>
+      <Navbar
+        sections={sectionTitles}
+        selected={selected}
+        setSelected={setSelected}
+      />
+      <div className="landing-body">
+        <h2 id="name">Matthew Nieva</h2>
+        <div id="center-grid">
+          <div
+            className={`hoverables-display ${
+              hovered !== undefined ? "paused" : ""
+            }`}
+          >
+            <div className="hoverables-holder">{icons}</div>
+          </div>
+          {/* Is it constant picture? */}
+          {mattchooContent[selected].constantPic ? (
+            <img
+              src={mattchooContent[selected].constantPic}
+              className="circular center-pic"
+              alt="matthew-nieva"
+            /> // Is it hovered or not?
+          ) : hovered || hovered === 0 ? (
+            //is the icon a picture or SVG?
+            React.isValidElement(
+              mattchooContent[selected].hoverables[hovered].hoverable?.icon
+            ) ? (
+              <img
+                src={
+                  mattchooContent[selected].hoverables[hovered].hoverable
+                    ?.displaySVG
+                }
+                style={{ backgroundColor: "#841414" }}
+                className="circular center-pic"
+                alt="project-pic"
+              />
+            ) : (
+              <img
+                src={
+                  mattchooContent[selected].hoverables[hovered].hoverable?.icon
+                }
+                className="circular center-pic"
+                alt="project-pic"
+              />
+            )
+          ) : (
+            <img
+              src={mattchoo}
+              className="circular center-pic"
+              alt="matthew-nieva"
+            />
+          )}
         </div>
-        <img
-          src={
-            mattchooContent[selected].constantPic
-              ? mattchooContent[selected].constantPic
-              : hovered || hovered === 0
-              ? mattchooContent[selected].hoverables[hovered].hoverable?.icon
-              : mattchoo
-          }
-          className="circular center-pic"
-          alt="matthew-nieva"
-        />
-      </div>
 
-      <div id="name">Matthew Nieva</div>
-      <div>
-        Display All
-        <input
-          type="checkbox"
-          value="DisplayLinks"
-          checked={displayAll}
-          onChange={() => setDisplayAll((prevVal) => !prevVal)}
-        />
+        <div>
+          Display All
+          <input
+            type="checkbox"
+            value="DisplayLinks"
+            checked={displayAll}
+            onChange={() => setDisplayAll((prevVal) => !prevVal)}
+          />
+        </div>
+        <div className="text-section">{displayText}</div>
       </div>
-      <div className="text-section">{displayText}</div>
-
-      <div className="selected-slider-container">
-        <input
-          type="range"
-          min={0}
-          max={CONTENT_SIZE - 1}
-          step={"1"}
-          value={selected}
-          onChange={(event) => {
-            console.log(event.target.value);
-            setSelected(parseInt(event.target.value));
-          }}
-          onMouseEnter={() => console.log("Mouse entered slider!")}
-          onMouseLeave={() => console.log("Bye bye mouse")}
-        />
-      </div>
-    </div>
+    </>
   );
 }
