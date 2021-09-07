@@ -183,7 +183,7 @@ const sectionContent: SectionLayout[] = [
         hoverable: {
           icon: defaultIcon,
           iconAltText: "PracticePlayback",
-          link: "https://devpost.com/software/tastebuds",
+          link: "https://devpost.com/software/music-mate",
           name: "Practice Playback",
           extraText: (
             <p className="text-section extra-text">
@@ -201,7 +201,7 @@ const sectionContent: SectionLayout[] = [
         hoverable: {
           icon: eyewalk,
           iconAltText: "EyeWalk",
-          link: "https://devpost.com/software/tastebuds",
+          link: "https://github.com/matthewcn56/EyeWalk",
           name: "EyeWalk",
           extraText: (
             <p className="text-section extra-text">
