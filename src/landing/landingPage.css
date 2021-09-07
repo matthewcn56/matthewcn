@@ -121,12 +121,13 @@
   background-image: linear-gradient(white 0%, var(--main-color) 0%);
   background-size: 100% 5px;
   background-repeat: no-repeat;
-  transition: all 1s ease;
+  transition: all 750ms ease;
   display: inline-block;
 }
 
 .link-container.active {
   background-size: 100% 85%;
+  transition: all 750ms ease;
 }
 
 #name {

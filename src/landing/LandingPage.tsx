@@ -145,13 +145,15 @@ export default function LandingPage() {
         </div>
 
         <div className="spaced-row">
-          <span className="text-container">Display All</span>
-          <input
-            type="checkbox"
-            value="DisplayLinks"
-            checked={displayAll}
-            onChange={() => setDisplayAll((prevVal) => !prevVal)}
-          />
+          <label className="text-section">
+            Display All
+            <input
+              type="checkbox"
+              value="DisplayLinks"
+              checked={displayAll}
+              onChange={() => setDisplayAll((prevVal) => !prevVal)}
+            />
+          </label>
         </div>
         <div className="text-section extra-text">{displayText}</div>
         <div className="text-section extra-text">
