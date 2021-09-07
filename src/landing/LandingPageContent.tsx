@@ -66,7 +66,7 @@ const sectionContent: SectionLayout[] = [
         hoverable: {
           icon: <ResumeSVG color="#FFFFFF" />,
           iconAltText: "Resume",
-          link: "https://github.com/matthewcn56/matthewcn/blob/main/src/assets/MatthewNieva_Resume.pdf",
+          link: "https://github.com/matthewcn56/matthewcn/raw/main/src/assets/MatthewNieva_Resume.pdf",
           name: "Resume",
         },
       },
