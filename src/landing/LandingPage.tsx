@@ -15,7 +15,7 @@ export default function LandingPage() {
     setAnimationReset(false);
 
     console.log("toggling!");
-    const reset = setTimeout(() => {
+    setTimeout(() => {
       setAnimationReset(true);
       console.log("Toggling finished!");
     }, 5);
