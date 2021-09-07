@@ -97,7 +97,7 @@
 }
 
 .active {
-  background-color: var(--main-color);
+  background-size: 100% 85%;
   color: white;
 }
 
@@ -110,11 +110,23 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 3px;
+  margin-right: 3px;
   font-size: 20px;
+  transition: all 400ms ease;
+}
+
+.link-container {
+  background-position: left bottom;
+  background-image: linear-gradient(white 0%, var(--main-color) 0%);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
+  display: inline-block;
+}
+
+.link-container.active {
+  background-size: 100% 85%;
 }
 
 #name {
@@ -142,7 +154,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 90px;
 }
 
 .spaced-row {

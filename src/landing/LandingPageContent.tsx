@@ -263,7 +263,10 @@ const sectionContent: SectionLayout[] = [
         },
       },
       {
-        plain: ", what I've been listening to on",
+        plain: ",",
+      },
+      {
+        plain: "what I've been listening to on",
       },
       {
         hoverable: {
@@ -274,7 +277,10 @@ const sectionContent: SectionLayout[] = [
         },
       },
       {
-        plain: ", where I've been running on",
+        plain: ",",
+      },
+      {
+        plain: "where I've been running on",
       },
       {
         hoverable: {
@@ -285,7 +291,10 @@ const sectionContent: SectionLayout[] = [
         },
       },
       {
-        plain: ", some fun songs I've performed for",
+        plain: ",",
+      },
+      {
+        plain: "some fun songs I've performed for",
       },
       {
         hoverable: {
@@ -296,7 +305,10 @@ const sectionContent: SectionLayout[] = [
         },
       },
       {
-        plain: ", or other fun projects on my projects page!",
+        plain: ",",
+      },
+      {
+        plain: "or other fun projects on my projects page!",
       },
     ],
   },

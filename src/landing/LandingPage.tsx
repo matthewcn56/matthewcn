@@ -25,7 +25,7 @@ export default function LandingPage() {
   let angle = 0;
   const width = 250;
   const height = 250;
-  const radius = 150;
+  const radius = 175;
   const hovSize = 60;
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
