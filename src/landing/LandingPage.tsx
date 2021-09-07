@@ -26,7 +26,7 @@ export default function LandingPage() {
   const width = 250;
   const height = 250;
   const radius = 150;
-  const hovSize = 50;
+  const hovSize = 60;
   const icons: JSX.Element[] = mattchooContent[selected].content.reduce(
     (icons: JSX.Element[], section) => {
       //console.log("Section is: " + Object.entries(section));

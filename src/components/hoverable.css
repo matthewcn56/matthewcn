@@ -14,19 +14,21 @@
 }
 
 .hoverable-container {
+  font-size: 20px;
   display: flex;
   position: relative;
   flex-direction: row;
   min-height: 55px;
   height: fit-content;
   width: fit-content;
-  max-width: 140px;
+  max-width: 160px;
   align-items: center;
   background-color: #a31e1e;
   border-radius: 4vw;
   color: white;
   transition: width 1s;
   transition-property: all;
+  padding-right: 5px;
 }
 
 .background {
