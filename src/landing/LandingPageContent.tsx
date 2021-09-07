@@ -5,11 +5,10 @@ import strava from "../assets/strava.svg";
 import defaultIcon from "../assets/logo512.png";
 import mattchoo from "../assets/mattchoo.jpg";
 import beheard from "../assets/beheard.svg";
-import EmailSVG from "../assets/EmailSVG";
-import LinkedInSVG from "../assets/LinkedInSVG";
-import ResumeSVG from "../assets/ResumeSVG";
-import GithubSVG from "../assets/GithubSVG";
-import MiravelSVG from "../assets/MiravelSVG";
+import emailLight from "../assets/lightMode/emailLight.svg";
+import linkedInLight from "../assets/lightMode/linkedInLight.svg";
+import resumeLight from "../assets/lightMode/resumeLight.svg";
+import githubLight from "../assets/lightMode/githubLight.svg";
 import miravelLight from "../assets/lightMode/miravelLight.svg";
 import tastebuds from "../assets/tastebuds.svg";
 import teachla from "../assets/teachla.svg";
@@ -17,6 +16,7 @@ import eyewalk from "../assets/eyewalk.svg";
 import "./landingPage.css";
 interface TextLayout {
   plain?: string;
+  fullLine?: boolean;
   hoverable?: HoverableLayout;
 }
 
@@ -58,13 +58,14 @@ const sectionContent: SectionLayout[] = [
       {
         plain: `Here's everything you need to contact me or learn about me at a
             glance.`,
+        fullLine: true,
       },
       {
         plain: `See what I've done with my`,
       },
       {
         hoverable: {
-          icon: <ResumeSVG color="#FFFFFF" />,
+          icon: resumeLight,
           iconAltText: "Resume",
           link: "https://github.com/matthewcn56/matthewcn/raw/main/src/assets/MatthewNieva_Resume.pdf",
           name: "Resume",
@@ -75,7 +76,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <GithubSVG color="#FFFFFF" />,
+          icon: githubLight,
           iconAltText: "Github",
           link: "https://github.com/matthewcn56",
           name: "Github",
@@ -86,7 +87,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <LinkedInSVG color="#FFFFFF" />,
+          icon: linkedInLight,
           iconAltText: "LinkedIn",
           link: "https://www.linkedin.com/in/matthew-nieva/",
           name: "LinkedIn",
@@ -97,7 +98,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         hoverable: {
-          icon: <EmailSVG color="#FFFFFF" />,
+          icon: emailLight,
           iconAltText: "Email",
           link: "mailto:matthewcn56@gmail.com",
           name: "Email",
@@ -124,7 +125,7 @@ const sectionContent: SectionLayout[] = [
     content: [
       {
         hoverable: {
-          icon: <MiravelSVG color="#FFFFFF" />,
+          icon: miravelLight,
           iconAltText: "IoT Wall Garden",
           link: "https://miravel.com",
           name: "IoT Wall Garden",
@@ -250,6 +251,7 @@ const sectionContent: SectionLayout[] = [
       },
       {
         plain: "and a whole lot more!",
+        fullLine: true,
       },
       {
         plain: "Check out what I'm up to on my",

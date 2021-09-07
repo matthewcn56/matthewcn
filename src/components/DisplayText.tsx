@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../landing/landingPage.css";
 interface DisplayProps {
   text: string | undefined;
@@ -7,10 +7,12 @@ interface DisplayProps {
   currSelected?: boolean;
   link?: any;
   displayLink?: boolean;
+  setHasClicked?: React.Dispatch<React.SetStateAction<boolean>>;
+  hasClicked?: boolean;
+  fullLine?: boolean;
 }
 
 export default function DisplayText(props: DisplayProps) {
-  const [hasClicked, setHasClicked] = useState(false);
   return props.index !== undefined ? (
     <span>
       <a
@@ -20,9 +22,10 @@ export default function DisplayText(props: DisplayProps) {
         style={{ cursor: "pointer", textDecoration: "none" }}
         onClick={() => {
           //first time clicked, set so that user can select
-          if (hasClicked && props.setHovered) props.setHovered(undefined);
-          if (!props.displayLink) setHasClicked((prevVal) => !prevVal);
-          console.log("Has clicked is: " + hasClicked);
+          if (props.hasClicked && props.setHovered) props.setHovered(undefined);
+          if (!props.displayLink && props.setHasClicked)
+            props.setHasClicked((prevVal) => !prevVal);
+          console.log("Has clicked is: " + props.hasClicked);
         }}
       >
         <span
@@ -33,16 +36,19 @@ export default function DisplayText(props: DisplayProps) {
             if (props.setHovered) props.setHovered(props.index);
           }}
           onMouseLeave={() => {
-            if (props.setHovered && !hasClicked) props.setHovered(undefined);
+            if (props.setHovered && !props.hasClicked)
+              props.setHovered(undefined);
           }}
           onTouchStart={() => {
             if (props.setHovered) props.setHovered(props.index);
           }}
-          onTouchEnd={() => {
-            if (props.setHovered && !hasClicked) props.setHovered(undefined);
-          }}
+          // onTouchEnd={() => {
+          //   if (props.setHovered && !props.hasClicked)
+          //     props.setHovered(undefined);
+          // }}
           // onTouchCancel={() => {
-          //   if (props.setHovered && !hasClicked) props.setHovered(undefined);
+          //   if (props.setHovered && !props.hasClicked)
+          //     props.setHovered(undefined);
           // }}
         >
           {props.text}
@@ -52,6 +58,8 @@ export default function DisplayText(props: DisplayProps) {
   ) : React.isValidElement(props.text) ? (
     props.text
   ) : (
-    <span className="text-container">{props.text}</span>
+    <span className={`text-container ${props.fullLine ? "full-line" : ""}`}>
+      {props.text}
+    </span>
   );
 }

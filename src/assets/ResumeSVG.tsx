@@ -8,8 +8,8 @@ export default function EmailSVG(props: FillableSVGProps) {
         width="30"
         height="30"
         viewBox="0 0 24 24"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
       >
         <path
           fill={props.color}

@@ -169,3 +169,7 @@
   align-content: center;
   align-items: center;
 }
+
+.full-line {
+  width: 100%;
+}

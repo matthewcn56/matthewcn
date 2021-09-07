@@ -10,6 +10,7 @@ export default function LandingPage() {
   const [hovered, setHovered] = useState<undefined | number>(undefined);
   const [displayAll, setDisplayAll] = useState(false);
   const [animationReset, setAnimationReset] = useState(true);
+  const [hasClicked, setHasClicked] = useState(false);
 
   function resetSpin() {
     setAnimationReset(false);
@@ -83,10 +84,16 @@ export default function LandingPage() {
   const displayText: JSX.Element[] = mattchooContent[selected].content.map(
     (section, index) =>
       section.plain ? (
-        <DisplayText text={section.plain} key={index} />
+        <DisplayText
+          text={section.plain}
+          key={index}
+          fullLine={section.fullLine}
+        />
       ) : (
         <DisplayText
           text={section.hoverable?.name}
+          setHasClicked={setHasClicked}
+          hasClicked={hasClicked}
           index={section.hoverableIndex}
           link={section.hoverable?.link}
           displayLink={isLinkClickable}
@@ -125,27 +132,13 @@ export default function LandingPage() {
             /> // Is it hovered or not?
           ) : hovered || hovered === 0 ? (
             //is the icon a picture or SVG?
-            React.isValidElement(
-              mattchooContent[selected].hoverables[hovered].hoverable?.icon
-            ) ? (
-              <img
-                src={
-                  mattchooContent[selected].hoverables[hovered].hoverable
-                    ?.displaySVG
-                }
-                style={{ backgroundColor: "#841414" }}
-                className="circular center-pic"
-                alt="project-pic"
-              />
-            ) : (
-              <img
-                src={
-                  mattchooContent[selected].hoverables[hovered].hoverable?.icon
-                }
-                className="circular center-pic"
-                alt="project-pic"
-              />
-            )
+            <img
+              src={
+                mattchooContent[selected].hoverables[hovered].hoverable?.icon
+              }
+              className="circular center-pic"
+              alt="project-pic"
+            />
           ) : (
             <img
               src={mattchoo}

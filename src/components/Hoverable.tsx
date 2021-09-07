@@ -45,15 +45,11 @@ export default function Hoverable(props: HoverableProps) {
             if (props.setHovered) props.setHovered(undefined);
           }}
         >
-          {React.isValidElement(props.hoverable.icon) ? (
-            <div className="icon-img">{props.hoverable.icon}</div>
-          ) : (
-            <img
-              src={props.hoverable.icon}
-              alt={props.hoverable.iconAltText}
-              className="icon-img"
-            />
-          )}
+          <img
+            src={props.hoverable.icon}
+            alt={props.hoverable.iconAltText}
+            className="icon-img"
+          />
         </a>
       </div>
       <div className={`hoverable-text ${!props.shouldDisplay ? "hidden" : ""}`}>

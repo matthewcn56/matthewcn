@@ -11,7 +11,7 @@
   height: 60px;
   width: 60px;
   border-radius: 4vw;
-  background-color: #841414;
+  background-color: var(--main-color);
   color: white;
 }
 

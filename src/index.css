@@ -2,7 +2,7 @@ body {
   margin: 0;
   --main-color: #841414;
   --lighter-gradient: #ce1f1f;
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: #fdeeee;
   font-family: "Glacial Indifference", BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

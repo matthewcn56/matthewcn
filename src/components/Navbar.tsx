@@ -16,6 +16,7 @@ export default function Navbar(props: NavbarProps) {
         props.setSelected(index);
         props.resetSpin();
       }}
+      key={sect}
     >
       {sect}
     </div>
