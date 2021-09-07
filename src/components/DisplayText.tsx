@@ -41,9 +41,9 @@ export default function DisplayText(props: DisplayProps) {
           onTouchEnd={() => {
             if (props.setHovered && !hasClicked) props.setHovered(undefined);
           }}
-          onTouchCancel={() => {
-            if (props.setHovered && !hasClicked) props.setHovered(undefined);
-          }}
+          // onTouchCancel={() => {
+          //   if (props.setHovered && !hasClicked) props.setHovered(undefined);
+          // }}
         >
           {props.text}
         </span>

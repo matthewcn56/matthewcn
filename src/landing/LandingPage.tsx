@@ -9,7 +9,17 @@ export default function LandingPage() {
   const [selected, setSelected] = useState(0);
   const [hovered, setHovered] = useState<undefined | number>(undefined);
   const [displayAll, setDisplayAll] = useState(false);
+  const [animationReset, setAnimationReset] = useState(true);
 
+  function resetSpin() {
+    setAnimationReset(false);
+
+    console.log("toggling!");
+    const reset = setTimeout(() => {
+      setAnimationReset(true);
+      console.log("Toggling finished!");
+    }, 5);
+  }
   useEffect(() => {
     setHovered(undefined);
   }, [selected]);
@@ -90,6 +100,7 @@ export default function LandingPage() {
   return (
     <>
       <Navbar
+        resetSpin={resetSpin}
         sections={sectionTitles}
         selected={selected}
         setSelected={setSelected}
@@ -100,10 +111,10 @@ export default function LandingPage() {
         <div id="center-grid">
           <div
             className={`hoverables-display ${
-              hovered !== undefined ? "paused" : ""
-            }`}
+              animationReset ? "rotate-display " : ""
+            } ${hovered !== undefined ? "paused" : ""}`}
           >
-            <div className="hoverables-holder">{icons}</div>
+            {animationReset && <div className="hoverables-holder">{icons}</div>}
           </div>
           {/* Is it constant picture? */}
           {mattchooContent[selected].constantPic ? (

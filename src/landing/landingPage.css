@@ -31,16 +31,21 @@
   left: 50%; */
   flex-wrap: wrap;
   justify-content: center;
+  /* animation: rotate-container 50s linear infinite;
+  transform-origin: 50% 50%; */
+  z-index: 1;
+}
+
+.rotate-display {
   animation: rotate-container 50s linear infinite;
   transform-origin: 50% 50%;
-  z-index: 1;
 }
 
 .hoverables-holder {
   position: relative;
 }
 
-.hoverables-display > div {
+.rotate-display > div {
   height: 100%;
   width: 100%;
 }
@@ -49,7 +54,7 @@
   animation-play-state: paused;
 }
 
-.hoverables-holder > div {
+.rotate-display > div > div {
   animation: inner-rotate 50s linear infinite;
   transform-origin: 30px 50%;
 }
