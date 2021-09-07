@@ -14,6 +14,7 @@ interface HoverableLayout {
   link: string;
   iconAltText: string;
   displaySVG?: any;
+  extraText?: JSX.Element;
 }
 
 export default function Hoverable(props: HoverableProps) {

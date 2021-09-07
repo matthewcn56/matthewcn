@@ -12,7 +12,6 @@ export default function LandingPage() {
 
   useEffect(() => {
     setHovered(undefined);
-    setDisplayAll(false);
   }, [selected]);
   const iconsLength = mattchooContent[selected].content.reduce(
     (num: number, curr) => {
@@ -94,9 +93,10 @@ export default function LandingPage() {
         sections={sectionTitles}
         selected={selected}
         setSelected={setSelected}
+        setHovered={setHovered}
       />
       <div className="landing-body">
-        <h2 id="name">Matthew Nieva</h2>
+        <h2 id="name">{mattchooContent[selected].header}</h2>
         <div id="center-grid">
           <div
             className={`hoverables-display ${
@@ -144,8 +144,8 @@ export default function LandingPage() {
           )}
         </div>
 
-        <div>
-          Display All
+        <div className="spaced-row">
+          <span className="text-container">Display All</span>
           <input
             type="checkbox"
             value="DisplayLinks"
@@ -153,7 +153,12 @@ export default function LandingPage() {
             onChange={() => setDisplayAll((prevVal) => !prevVal)}
           />
         </div>
-        <div className="text-section">{displayText}</div>
+        <div className="text-section extra-text">{displayText}</div>
+        <div className="text-section extra-text">
+          {hovered || hovered === 0
+            ? mattchooContent[selected].hoverables[hovered].hoverable?.extraText
+            : mattchooContent[selected].defaultText}
+        </div>
       </div>
     </>
   );

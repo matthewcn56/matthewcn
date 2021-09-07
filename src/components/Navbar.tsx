@@ -4,6 +4,7 @@ interface NavbarProps {
   sections: string[];
   selected: number;
   setSelected: React.Dispatch<React.SetStateAction<number>>;
+  setHovered: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 export default function Navbar(props: NavbarProps) {
@@ -15,5 +16,6 @@ export default function Navbar(props: NavbarProps) {
       {sect}
     </div>
   ));
+
   return <nav className="navbar">{navSects}</nav>;
 }
