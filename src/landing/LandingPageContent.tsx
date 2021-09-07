@@ -1,4 +1,7 @@
 import React from "react";
+import gme from "../assets/gme.svg";
+import lastfm from "../assets/lastfm.svg";
+import strava from "../assets/strava.svg";
 import defaultIcon from "../assets/logo512.png";
 import mattchoo from "../assets/mattchoo.jpg";
 import beheard from "../assets/beheard.svg";
@@ -108,7 +111,7 @@ const sectionContent: SectionLayout[] = [
   //second one is projects
   {
     title: "Experience",
-    header: "Projects/Work",
+    header: "Projects / Work",
     defaultText: (
       <p className="text-section">
         These are some of my past projects that I have worked on. Click or hover
@@ -240,15 +243,60 @@ const sectionContent: SectionLayout[] = [
     constantPic: mattchoo,
     content: [
       {
-        plain: "Outside of school, I ",
+        plain: "Outside of school, I enjoy running,",
+      },
+      {
+        plain: "playing and listening to music,",
+      },
+      {
+        plain: "and a whole lot more!",
+      },
+      {
+        plain: "Check out what I'm up to on my",
       },
       {
         hoverable: {
           icon: defaultIcon,
-          iconAltText: "LinkedIn",
-          link: "https://www.linkedin.com/in/matthew-nieva/",
-          name: "LinkedIn",
+          iconAltText: "whatcha-up-to-mattchoo",
+          link: "https://github.com/matthewcn56",
+          name: "Blog",
         },
+      },
+      {
+        plain: ", what I've been listening to on",
+      },
+      {
+        hoverable: {
+          icon: lastfm,
+          iconAltText: "LastFM",
+          link: "https://www.last.fm/user/Mattchooachoo",
+          name: "LastFM",
+        },
+      },
+      {
+        plain: ", where I've been running on",
+      },
+      {
+        hoverable: {
+          icon: strava,
+          iconAltText: "Strava",
+          link: "https://www.strava.com/athletes/90911676",
+          name: "Strava",
+        },
+      },
+      {
+        plain: ", some fun songs I've performed for",
+      },
+      {
+        hoverable: {
+          icon: gme,
+          iconAltText: "GME",
+          link: "https://www.youtube.com/watch?v=gvbFsFFYLCE",
+          name: "GME @ UCLA",
+        },
+      },
+      {
+        plain: ", or other fun projects on my projects page!",
       },
     ],
   },
