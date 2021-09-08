@@ -67,7 +67,7 @@ const sectionContent: SectionLayout[] = [
         hoverable: {
           icon: resumeLight,
           iconAltText: "Resume",
-          link: "https://matthewnieva.com/MatthewNieva_Resume.pdf",
+          link: "./MatthewNieva_Resume.pdf",
           name: "Resume",
         },
       },
@@ -320,7 +320,7 @@ const indexedContent: IndexedSectionLayout[] = sectionContent.map((section) => {
   let hovIndex = 0;
   const indexedLayout: IconsTextLayout[] = section.content.map((sect) => {
     if (sect.hoverable) {
-      console.log(hovIndex);
+      //console.log(hovIndex);
       const laidOut = {
         ...sect,
         hoverableIndex: hovIndex,
@@ -337,7 +337,7 @@ const indexedContent: IndexedSectionLayout[] = sectionContent.map((section) => {
     if (curr.hoverableIndex || curr.hoverableIndex === 0) listed.push(curr);
     return listed;
   }, []);
-  console.log("hoverables is: " + Object.entries(hoverables));
+  //console.log("hoverables is: " + Object.entries(hoverables));
   return {
     ...section,
     content: indexedLayout,

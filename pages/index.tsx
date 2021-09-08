@@ -18,10 +18,10 @@ const LandingPage: NextPage = () => {
   function resetSpin() {
     setAnimationReset(false);
 
-    console.log("toggling!");
+    //console.log("toggling!");
     setTimeout(() => {
       setAnimationReset(true);
-      console.log("Toggling finished!");
+      //console.log("Toggling finished!");
     }, 10);
   }
   useEffect(() => {
@@ -34,7 +34,7 @@ const LandingPage: NextPage = () => {
     },
     0
   );
-  console.log("IconsLength is: " + iconsLength);
+  //console.log("IconsLength is: " + iconsLength);
   const angleOffset = (Math.PI * 2) / iconsLength;
   let angle = 0;
   const width = 250;
@@ -81,7 +81,7 @@ const LandingPage: NextPage = () => {
   );
 
   const sectionTitles = mattchooContent.map((sect) => sect.title);
-  console.log(sectionTitles);
+  //console.log(sectionTitles);
 
   const isLinkClickable = mattchooContent[selected].clickableText;
   //console.log(mattchooContent[selected]);

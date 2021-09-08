@@ -24,7 +24,7 @@ export default function DisplayText(props: DisplayProps) {
           if (props.hasClicked && props.setHovered) props.setHovered(undefined);
           if (!props.displayLink && props.setHasClicked)
             props.setHasClicked((prevVal) => !prevVal);
-          console.log("Has clicked is: " + props.hasClicked);
+          //console.log("Has clicked is: " + props.hasClicked);
         }}
       >
         <span
