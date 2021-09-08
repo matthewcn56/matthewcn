@@ -30,7 +30,7 @@ interface HoverableLayout {
   link: string;
   iconAltText: string;
   displaySVG?: any;
-  extraText?: JSX.Element;
+  extraText?: string;
 }
 
 interface SectionLayout {
@@ -39,10 +39,10 @@ interface SectionLayout {
   content: TextLayout[];
   constantPic?: any;
   clickableText: boolean;
-  defaultText?: JSX.Element;
+  defaultText?: string;
 }
 
-interface IndexedSectionLayout extends SectionLayout {
+export interface IndexedSectionLayout extends SectionLayout {
   content: IconsTextLayout[];
   hoverables: IconsTextLayout[];
 }
@@ -113,14 +113,12 @@ const sectionContent: SectionLayout[] = [
   {
     title: "Experience",
     header: "Projects / Work",
-    defaultText: (
-      <p className="text-section">
+    defaultText: `
         These are some of my past projects that I have worked on. Click or hover
         over one of the project titles to learn more about it. Click on their
         icon to view their deployment if it's a website, or go to its project
         page if it's something else!
-      </p>
-    ),
+      `,
     clickableText: false,
     content: [
       {
@@ -130,16 +128,14 @@ const sectionContent: SectionLayout[] = [
           link: "https://miravel.com",
           name: "IoT Wall Garden",
           displaySVG: miravelLight,
-          extraText: (
-            <p className="text-section extra-text">
+          extraText: `
               Working with Miravel, I set up the Internet of Things
               infrastructure for a smart garden system. From writing
               Server-On-Chip device firmware, developing the mobile client,
               connecting the two both locally via WiFi, and processing data
               streams via the cloud, I've helped make the smart garden system
               smart!
-            </p>
-          ),
+            `,
         },
       },
       {
@@ -148,16 +144,14 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "Bias By Us",
           link: "https://bias-by-us.netlify.app",
           name: "Bias By Us",
-          extraText: (
-            <p className="text-section extra-text">
+          extraText: `
               With TeachLA, outside of training our dev-team in web-dev as a
               training director, I am working on developing an interactive
               website that teaches about bias within machine learning
               algorithms! As our lead developer, I review others' code and have
               set up our product architecture, enabling our React website to
               communicate with our serverless NLP model hosted on AWS!
-            </p>
-          ),
+            `,
         },
       },
       {
@@ -166,8 +160,7 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "TasteBuds",
           link: "https://devpost.com/software/tastebuds",
           name: "TasteBuds",
-          extraText: (
-            <p className="text-section extra-text">
+          extraText: `
               Working with some friends over Spring Break for LA Hacks 2021, we
               developed an IoT smart dining hall system that helped students
               figure out which dining halls were occupied, where their friends
@@ -176,8 +169,7 @@ const sectionContent: SectionLayout[] = [
               our database and set-up an autonomous webscraper on GCP to figure
               out the daily menu using UCLA's Dining Hall page. We won the Best
               Network Hack Award!
-            </p>
-          ),
+            `,
         },
       },
       {
@@ -186,16 +178,14 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "PracticePlayback",
           link: "https://devpost.com/software/music-mate",
           name: "Practice Playback",
-          extraText: (
-            <p className="text-section extra-text">
+          extraText: `
               Working with a friend for MakeHarvard 2021, we developed an IoT
               system that helped music students practice their instruments by
               playing back user-uploaded sheet music on a microcontroller! I
               worked on the mobile app for our system and connected it to our
               Firebase database hosted on GCP. We won the Best Software
               Component Award!
-            </p>
-          ),
+            `,
         },
       },
       {
@@ -204,8 +194,7 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "EyeWalk",
           link: "https://github.com/matthewcn56/EyeWalk",
           name: "EyeWalk",
-          extraText: (
-            <p className="text-section extra-text">
+          extraText: `
               As the lead developer of my team for the Innovate@UCLA Young Tech
               Professional Bootcamp, I made a pedestrian routing-app in
               React-Native that harnessed public and crowdsourced data to
@@ -213,8 +202,7 @@ const sectionContent: SectionLayout[] = [
               GoogleMaps API and ArcGIS data, processing the data with our
               express server. My team won the bootcamp after presenting to
               judges from industry!
-            </p>
-          ),
+            `,
         },
       },
       {
@@ -223,16 +211,14 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "BeHeard",
           link: "https://devpost.com/software/be-heard",
           name: "BeHeard",
-          extraText: (
-            <p className="text-section extra-text">
+          extraText: `
               For XHacks 2021, I worked with some friends to develop a global
               news platform centralized on activism and powered by NLP! I
               developed user authentication and database manipulation for our
               Flask backend, deployed it to a CI/CD pipeline with AWS, and
               connected it to our front-end built in React Native. We won the
               Best Startup Track Award!
-            </p>
-          ),
+            `,
         },
       },
     ],

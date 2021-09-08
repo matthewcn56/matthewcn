@@ -1,14 +1,32 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import mattchoo from "../public/static/mattchoo.jpg";
 import mattchooContent from "../landing/LandingPageContent";
+import { IndexedSectionLayout } from "../landing/LandingPageContent";
 import Hoverable from "../components/Hoverable";
 import DisplayText from "../components/DisplayText";
 import Navbar from "../components/Navbar";
+import { GetStaticProps } from "next";
 
-const LandingPage: NextPage = () => {
+interface LandingPageProps {
+  mattchooContent: IndexedSectionLayout[];
+  mattchoo: StaticImageData;
+}
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      mattchooContent: mattchooContent,
+      mattchoo: mattchoo,
+    },
+  };
+};
+const LandingPage = ({
+  mattchooContent,
+  mattchoo,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [selected, setSelected] = useState(0);
   const [hovered, setHovered] = useState<undefined | number>(undefined);
   const [displayAll, setDisplayAll] = useState(false);
