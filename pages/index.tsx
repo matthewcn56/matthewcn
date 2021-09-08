@@ -160,6 +160,7 @@ const LandingPage: NextPage = () => {
                     src={mattchooContent[selected].constantPic}
                     className="circular center-pic"
                     alt="matthew-nieva"
+                    placeholder="blur"
                   />{" "}
                 </div>
               ) : // Is it hovered or not?
@@ -171,6 +172,7 @@ const LandingPage: NextPage = () => {
                       mattchooContent[selected].hoverables[hovered].hoverable
                         ?.icon
                     }
+                    placeholder="blur"
                     className="circular center-pic"
                     alt="project-pic"
                   />
@@ -181,6 +183,7 @@ const LandingPage: NextPage = () => {
                     src={mattchoo}
                     className="circular center-pic"
                     alt="matthew-nieva"
+                    placeholder="blur"
                   />
                 </div>
               )}
