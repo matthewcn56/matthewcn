@@ -1,5 +1,5 @@
 import React from "react";
-import "./hoverable.css";
+import Image from "next/image";
 
 interface HoverableProps {
   hoverable: HoverableLayout;
@@ -45,11 +45,13 @@ export default function Hoverable(props: HoverableProps) {
             if (props.setHovered) props.setHovered(undefined);
           }}
         >
-          <img
-            src={props.hoverable.icon}
-            alt={props.hoverable.iconAltText}
-            className="icon-img"
-          />
+          <div className="icon-img">
+            <Image
+              src={props.hoverable.icon}
+              alt={props.hoverable.iconAltText}
+              className="icon-img"
+            />
+          </div>
         </a>
       </div>
       <div className={`hoverable-text ${!props.shouldDisplay ? "hidden" : ""}`}>

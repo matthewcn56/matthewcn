@@ -1,5 +1,4 @@
 import React from "react";
-import "../landing/landingPage.css";
 interface DisplayProps {
   text: string | undefined;
   index?: number;
