@@ -112,24 +112,24 @@ const LandingPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <link rel="icon" href="../public/favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="about mattchoo!" />
-        <link rel="apple-touch-icon" href="../public/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="../public/favicon-32x32.png"
+          href="./favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="../public/favicon-16x16.png"
+          href="./favicon-16x16.png"
         />
-        <link rel="manifest" href="../public/manifest.json" />
+        <link rel="manifest" href="./manifest.json" />
         <title>Matthew Nieva</title>
       </Head>
 
