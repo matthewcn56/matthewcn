@@ -26,6 +26,7 @@ const LandingPage: NextPage = () => {
   }
   useEffect(() => {
     setHovered(undefined);
+    setHasClicked(false);
   }, [selected]);
   const iconsLength = mattchooContent[selected].content.reduce(
     (num: number, curr) => {
@@ -160,7 +161,6 @@ const LandingPage: NextPage = () => {
                     src={mattchooContent[selected].constantPic}
                     className="circular center-pic"
                     alt="matthew-nieva"
-                    placeholder="blur"
                   />{" "}
                 </div>
               ) : // Is it hovered or not?
@@ -172,7 +172,6 @@ const LandingPage: NextPage = () => {
                       mattchooContent[selected].hoverables[hovered].hoverable
                         ?.icon
                     }
-                    placeholder="blur"
                     className="circular center-pic"
                     alt="project-pic"
                   />
@@ -183,7 +182,6 @@ const LandingPage: NextPage = () => {
                     src={mattchoo}
                     className="circular center-pic"
                     alt="matthew-nieva"
-                    placeholder="blur"
                   />
                 </div>
               )}
@@ -202,7 +200,7 @@ const LandingPage: NextPage = () => {
             </div>
             <div className="text-section extra-text">{displayText}</div>
             <div className="text-section extra-text">
-              {hovered || hovered === 0
+              {(hovered && hovered < iconsLength) || hovered === 0
                 ? mattchooContent[selected].hoverables[hovered].hoverable
                     ?.extraText
                 : mattchooContent[selected].defaultText}

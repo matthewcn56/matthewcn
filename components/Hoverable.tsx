@@ -50,7 +50,6 @@ export default function Hoverable(props: HoverableProps) {
               src={props.hoverable.icon}
               alt={props.hoverable.iconAltText}
               className="icon-img"
-              placeholder="blur"
             />
           </div>
         </a>
