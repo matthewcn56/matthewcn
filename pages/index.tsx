@@ -115,7 +115,10 @@ const LandingPage: NextPage = () => {
         <link rel="icon" href="./favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="about mattchoo!" />
+        <meta
+          name="description"
+          content="All about Matthew Nieva! Perfect for your stalking needs."
+        />
         <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
         <link
           rel="icon"
