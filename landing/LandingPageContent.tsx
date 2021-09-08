@@ -1,19 +1,19 @@
 import React from "react";
-import gme from "../assets/gme.svg";
-import lastfm from "../assets/lastfm.svg";
-import strava from "../assets/strava.svg";
-import defaultIcon from "../assets/logo512.png";
-import mattchoo from "../assets/mattchoo.jpg";
-import beheard from "../assets/beheard.svg";
-import emailLight from "../assets/lightMode/emailLight.svg";
-import linkedInLight from "../assets/lightMode/linkedInLight.svg";
-import resumeLight from "../assets/lightMode/resumeLight.svg";
-import githubLight from "../assets/lightMode/githubLight.svg";
-import miravelLight from "../assets/lightMode/miravelLight.svg";
-import tastebuds from "../assets/tastebuds.svg";
-import teachla from "../assets/teachla.svg";
-import eyewalk from "../assets/eyewalk.svg";
-import "./landingPage.css";
+import Image from "next/image";
+import gme from "../public/static/gme.svg";
+import lastfm from "../public/static/lastfm.svg";
+import strava from "../public/static/strava.svg";
+import defaultIcon from "../public/logo512.png";
+import mattchoo from "../public/static/mattchoo.jpg";
+import beheard from "../public/static/beheard.svg";
+import emailLight from "../public/static/lightMode/emailLight.svg";
+import linkedInLight from "../public/static/lightMode/linkedInLight.svg";
+import resumeLight from "../public/static/lightMode/resumeLight.svg";
+import githubLight from "../public/static/lightMode/githubLight.svg";
+import miravelLight from "../public/static/lightMode/miravelLight.svg";
+import tastebuds from "../public/static/tastebuds.svg";
+import teachla from "../public/static/teachla.svg";
+import eyewalk from "../public/static/eyewalk.svg";
 interface TextLayout {
   plain?: string;
   fullLine?: boolean;
@@ -37,7 +37,7 @@ interface SectionLayout {
   title: string;
   header: string;
   content: TextLayout[];
-  constantPic?: string;
+  constantPic?: any;
   clickableText: boolean;
   defaultText?: JSX.Element;
 }

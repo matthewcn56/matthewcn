@@ -1,5 +1,4 @@
 import React from "react";
-import "./navbar.css";
 interface NavbarProps {
   sections: string[];
   selected: number;
