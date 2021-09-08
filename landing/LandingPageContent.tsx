@@ -143,7 +143,7 @@ const sectionContent: SectionLayout[] = [
           icon: teachla,
           iconAltText: "Bias By Us",
           link: "https://bias-by-us.netlify.app",
-          name: "Bias By Us",
+          name: "BiasByUs",
           extraText: `
               With TeachLA, outside of training our dev-team in web-dev as a
               training director, I am working on developing an interactive
