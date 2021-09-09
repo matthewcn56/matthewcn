@@ -117,8 +117,17 @@ const LandingPage: NextPage = () => {
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="All about Matthew Nieva! Perfect for your stalking needs."
+          content="All about Matthew Nieva. Perfect for your stalking needs. Check out how to contact me, past positions I've held and projects I've worked on, some of my hobbies, and more!"
         />
+        <meta property="og:image" content="./image-desc.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:title" content="Matthew Nieva" />
+        <meta
+          property="og:description"
+          content="All about Matthew Nieva. Perfect for your stalking needs. Check out how to contact me, past positions I've held and projects I've worked on, some of my hobbies, and more!"
+        />
+
         <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
         <link
           rel="icon"
@@ -164,6 +173,7 @@ const LandingPage: NextPage = () => {
                     src={mattchooContent[selected].constantPic}
                     className="circular center-pic"
                     alt="matthew-nieva"
+                    placeholder="blur"
                   />{" "}
                 </div>
               ) : // Is it hovered or not?
@@ -177,6 +187,7 @@ const LandingPage: NextPage = () => {
                     }
                     className="circular center-pic"
                     alt="project-pic"
+                    placeholder="blur"
                   />
                 </div>
               ) : (
@@ -185,6 +196,7 @@ const LandingPage: NextPage = () => {
                     src={mattchoo}
                     className="circular center-pic"
                     alt="matthew-nieva"
+                    placeholder="blur"
                   />
                 </div>
               )}
