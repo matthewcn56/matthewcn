@@ -119,7 +119,10 @@ const LandingPage: NextPage = () => {
           name="description"
           content="All about Matthew Nieva. Perfect for your stalking needs. Check out how to contact me, past positions I've held and projects I've worked on, some of my hobbies, and more!"
         />
-        <meta property="og:image" content="./image-desc.png" />
+        <meta
+          property="og:image"
+          content="https://www.matthewnieva.com/static/image-desc.png"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:title" content="Matthew Nieva" />
