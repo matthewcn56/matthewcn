@@ -13,6 +13,7 @@ import githubLight from "../public/static/lightMode/githubLight.svg";
 import miravelLight from "../public/static/lightMode/miravelLight.svg";
 import tastebuds from "../public/static/tastebuds.svg";
 import teachla from "../public/static/teachla.svg";
+import devpost from "../public/static/devpost.svg";
 import eyewalk from "../public/static/eyewalk.svg";
 interface TextLayout {
   plain?: string;
@@ -102,6 +103,20 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "Email",
           link: "mailto:matthewcn56@gmail.com",
           name: "Email",
+        },
+      },
+      {
+        plain: ".",
+      },
+      {
+        plain: "See what's happening in my life with my ",
+      },
+      {
+        hoverable: {
+          icon: defaultIcon,
+          iconAltText: "Blog",
+          link: "blog.matthewnieva.com",
+          name: "Blog",
         },
       },
       {
@@ -240,21 +255,7 @@ const sectionContent: SectionLayout[] = [
         fullLine: true,
       },
       {
-        plain: "Check out what I'm up to on my",
-      },
-      {
-        hoverable: {
-          icon: defaultIcon,
-          iconAltText: "whatchu-up-to-mattchoo",
-          link: "https://blog.matthewnieva.com",
-          name: "Blog",
-        },
-      },
-      {
-        plain: ",",
-      },
-      {
-        plain: "what I've been listening to on",
+        plain: "Check out what I've been listening to on",
       },
       {
         hoverable: {
@@ -290,6 +291,20 @@ const sectionContent: SectionLayout[] = [
           iconAltText: "GME",
           link: "https://www.youtube.com/watch?v=gvbFsFFYLCE",
           name: "GME @ UCLA",
+        },
+      },
+      {
+        plain: ",",
+      },
+      {
+        plain: "some fun projects on",
+      },
+      {
+        hoverable: {
+          icon: devpost,
+          iconAltText: "DevPost",
+          link: "https://devpost.com/matthewcn56?ref_content=user-portfolio",
+          name: "DevPost",
         },
       },
       {
