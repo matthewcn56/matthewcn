@@ -115,7 +115,7 @@ const sectionContent: SectionLayout[] = [
         hoverable: {
           icon: defaultIcon,
           iconAltText: "Blog",
-          link: "blog.matthewnieva.com",
+          link: "https://blog.matthewnieva.com",
           name: "Blog",
         },
       },
