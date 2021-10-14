@@ -18,7 +18,7 @@ body {
   margin: 0;
   --main-color: #841414;
   --lighter-gradient: #ce1f1f;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   background-color: #fdeeee;
   font-family: "Glacial Indifference", BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -190,7 +190,7 @@ code {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   flex-direction: column;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   align-items: center;
 }
 
@@ -280,7 +280,7 @@ code {
   height: 3rem;
   text-align: center;
   flex-direction: row;
-  overflow: auto;
+  /* overflow: auto; */
   display: flex;
   justify-content: center;
   align-items: center;
