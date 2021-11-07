@@ -109,7 +109,7 @@ const sectionContent: SectionLayout[] = [
         plain: ".",
       },
       {
-        plain: "See what's happening in my life with my ",
+        plain: "See what's happening in my life with my",
       },
       {
         hoverable: {

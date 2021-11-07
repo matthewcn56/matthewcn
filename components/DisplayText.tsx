@@ -55,7 +55,7 @@ export default function DisplayText(props: DisplayProps) {
       </a>
     </span>
   ) : React.isValidElement(props.text) ? (
-    props.text
+    <span>{props.text}</span>
   ) : (
     <span className={`text-container ${props.fullLine ? "full-line" : ""}`}>
       {props.text}
