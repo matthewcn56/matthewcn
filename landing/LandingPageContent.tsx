@@ -4,7 +4,7 @@ import gme from "../public/static/gme.svg";
 import lastfm from "../public/static/lastfm.svg";
 import strava from "../public/static/strava.svg";
 import defaultIcon from "../public/logo512.png";
-import mattchoo from "../public/static/mattchoo2.jpg";
+import mattchoo from "../public/static/mattchoo.jpg";
 import beheard from "../public/static/beheard.svg";
 import emailLight from "../public/static/lightMode/emailLight.svg";
 import linkedInLight from "../public/static/lightMode/linkedInLight.svg";
